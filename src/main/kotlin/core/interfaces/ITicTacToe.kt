@@ -3,7 +3,7 @@ package core.interfaces
 import core.Player
 import kotlinx.coroutines.flow.StateFlow
 
-interface IGame {
+interface ITicTacToe {
     val score: IGameScore
     val initPlayer: Player
     val currentPlayer: StateFlow<Player>
@@ -11,6 +11,8 @@ interface IGame {
     val status: StateFlow<GameStatus>
     val field: IGameField
 
+    fun restart()
     fun reset()
-    fun makeMove(rowIndex: Int, columnIndex: Int): Pair<Boolean, String>
+    fun makeMove(index: Int): Boolean
+    fun makeMove(rowIndex: Int, columnIndex: Int): Boolean
 }

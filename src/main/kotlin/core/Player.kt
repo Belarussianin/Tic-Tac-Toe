@@ -7,4 +7,9 @@ enum class Player {
         X -> O
         O -> X
     }
+
+    override fun toString(): String = when (this) {
+        O -> "O"
+        X -> "X"
+    }
 }

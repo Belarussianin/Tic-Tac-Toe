@@ -1,20 +1,26 @@
-import core.Game
+import core.TicTacToe
+import core.interfaces.ITicTacToe
 
 fun main() {
-    val game = Game()
-    println(game.field.state.value)
-    game.makeMove(0, 0)
-    println(game.field.state.value)
-    game.makeMove(0, 1)
-    println(game.field.state.value)
-    game.makeMove(1, 1)
-    println(game.field.state.value)
-    game.makeMove(0, 2)
-    println(game.field.state.value)
-    game.makeMove(2, 2)
-    println(game.field.state.value)
-    game.makeMove(1, 1)
-    println(game.field.state.value)
-    println(game.score.state.value)
-    println(game.status.value)
+    TicTacToe().apply {
+        printFieldState()
+        makeMove(0, 0)
+        printFieldState()
+        makeMove(0, 1)
+        printFieldState()
+        makeMove(1, 1)
+        printFieldState()
+        makeMove(0, 2)
+        printFieldState()
+        makeMove(2, 2)
+        printFieldState()
+        makeMove(1, 1)
+        printFieldState()
+        println(score.state.value)
+        println(status.value)
+    }
+}
+
+fun ITicTacToe.printFieldState() {
+    println(field.state.value.joinToString("\n"))
 }
